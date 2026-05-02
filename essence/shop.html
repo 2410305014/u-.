@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop the exclusive collection of luxury perfumes by ÉLÉGANCE.">
+    <title>Shop | ÉLÉGANCE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            padding: 150px 0 50px;
+            text-align: center;
+            background-color: var(--bg-light);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .page-title {
+            font-size: 3rem;
+            color: var(--primary-color);
+            letter-spacing: 4px;
+        }
+        .shop-container {
+            display: flex;
+            gap: 40px;
+            padding: 60px 0;
+            flex-wrap: wrap;
+        }
+        .filters {
+            flex: 0 0 250px;
+            padding-right: 20px;
+            border-right: 1px solid var(--border-color);
+        }
+        .filter-group {
+            margin-bottom: 30px;
+        }
+        .filter-group h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+        .filter-options label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .filter-options label:hover {
+            color: var(--text-main);
+        }
+        .filter-options input[type="checkbox"], .filter-options input[type="radio"] {
+            accent-color: var(--primary-color);
+        }
+        .price-range {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .price-range input {
+            width: 100%;
+        }
+        .products-area {
+            flex: 1;
+        }
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .sort-select {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 15px;
+            font-family: var(--font-body);
+            outline: none;
+        }
+        .sort-select option {
+            background: var(--bg-color);
+        }
+        
+        @media (max-width: 768px) {
+            .shop-container {
+                flex-direction: column;
+            }
+            .filters {
+                flex: none;
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header id="header" class="scrolled">
+        <div class="container navbar">
+            <a href="index.html" class="logo">ÉLÉGANCE</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title">THE COLLECTION</h1>
+            <p style="color: var(--text-muted); margin-top: 10px; letter-spacing: 2px;">Explore our finest creations</p>
+        </div>
+    </div>
+
+    <!-- Shop Content -->
+    <section class="container shop-container">
+        <!-- Sidebar Filters -->
+        <aside class="filters">
+            <div class="filter-group">
+                <h4>Fragrance Type</h4>
+                <div class="filter-options">
+                    <label><input type="checkbox"> Eau de Parfum</label>
+                    <label><input type="checkbox"> Eau de Toilette</label>
+                    <label><input type="checkbox"> Extrait de Parfum</label>
+                    <label><input type="checkbox"> Cologne</label>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <h4>Gender</h4>
+                <div class="filter-options">
+                    <label><input type="radio" name="gender"> All</label>
+                    <label><input type="radio" name="gender"> Feminine</label>
+                    <label><input type="radio" name="gender"> Masculine</label>
+                    <label><input type="radio" name="gender"> Unisex</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Scent Notes</h4>
+                <div class="filter-options">
+                    <label><input type="checkbox"> Woody</label>
+                    <label><input type="checkbox"> Floral</label>
+                    <label><input type="checkbox"> Oriental</label>
+                    <label><input type="checkbox"> Fresh</label>
+                    <label><input type="checkbox"> Citrus</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Price</h4>
+                <div class="price-range">
+                    <span>$50</span>
+                    <input type="range" min="50" max="500" value="500" style="accent-color: var(--primary-color);">
+                    <span>$500+</span>
+                </div>
+            </div>
+            <button class="btn" style="width: 100%;">Apply Filters</button>
+        </aside>
+
+        <!-- Products List -->
+        <div class="products-area">
+            <div class="products-header">
+                <p style="color: var(--text-muted);">Showing 1-6 of 24 results</p>
+                <select class="sort-select">
+                    <option value="default">Default Sorting</option>
+                    <option value="popularity">Sort by Popularity</option>
+                    <option value="new">Sort by Newest</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+
+            <div class="product-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+                
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <a href="product.html" style="display: block;">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop" alt="Midnight Aura Perfume">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <h3><a href="product.html">MIDNIGHT AURA</a></h3>
+                        <p>Woody / Oriental</p>
+                        <span class="price">$185.00</span>
+                    </div>
+                    <div class="product-actions" style="position: relative; bottom: 0; margin-top: 15px; opacity: 1;">
+                        <div class="action-btn" title="Add to Cart"><i class="fas fa-shopping-bag"></i></div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <a href="product.html" style="display: block;">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop" alt="Lumina Gold Perfume">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <h3><a href="product.html">LUMINA GOLD</a></h3>
+                        <p>Floral / Amber</p>
+                        <span class="price">$210.00</span>
+                    </div>
+                    <div class="product-actions" style="position: relative; bottom: 0; margin-top: 15px; opacity: 1;">
+                        <div class="action-btn" title="Add to Cart"><i class="fas fa-shopping-bag"></i></div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <a href="product.html" style="display: block;">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=800&auto=format&fit=crop" alt="Noir Absolute Perfume">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <h3><a href="product.html">NOIR ABSOLUTE</a></h3>
+                        <p>Woody / Vanilla</p>
+                        <span class="price">$195.00</span>
+                    </div>
+                    <div class="product-actions" style="position: relative; bottom: 0; margin-top: 15px; opacity: 1;">
+                        <div class="action-btn" title="Add to Cart"><i class="fas fa-shopping-bag"></i></div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <a href="product.html" style="display: block;">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800&auto=format&fit=crop" alt="Velvet Rose">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <h3><a href="product.html">VELVET ROSE</a></h3>
+                        <p>Floral / Fresh</p>
+                        <span class="price">$165.00</span>
+                    </div>
+                    <div class="product-actions" style="position: relative; bottom: 0; margin-top: 15px; opacity: 1;">
+                        <div class="action-btn" title="Add to Cart"><i class="fas fa-shopping-bag"></i></div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <a href="product.html" style="display: block;">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=800&auto=format&fit=crop" alt="Oud Supreme">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <h3><a href="product.html">OUD SUPREME</a></h3>
+                        <p>Oriental / Woody</p>
+                        <span class="price">$250.00</span>
+                    </div>
+                    <div class="product-actions" style="position: relative; bottom: 0; margin-top: 15px; opacity: 1;">
+                        <div class="action-btn" title="Add to Cart"><i class="fas fa-shopping-bag"></i></div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <a href="product.html" style="display: block;">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1595425970377-c9703c48657a?q=80&w=800&auto=format&fit=crop" alt="Citrus Blanc">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <h3><a href="product.html">CITRUS BLANC</a></h3>
+                        <p>Fresh / Citrus</p>
+                        <span class="price">$145.00</span>
+                    </div>
+                    <div class="product-actions" style="position: relative; bottom: 0; margin-top: 15px; opacity: 1;">
+                        <div class="action-btn" title="Add to Cart"><i class="fas fa-shopping-bag"></i></div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn btn-solid">Load More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Footer content same as index -->
+        <div class="container footer-content">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="font-size: 1.5rem;">ÉLÉGANCE</a>
+                <p style="margin-top: 20px;">Redefining luxury through the art of perfumery.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="shop.html">Shop Collection</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ÉLÉGANCE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
